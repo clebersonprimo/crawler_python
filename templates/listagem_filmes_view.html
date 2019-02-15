@@ -1,0 +1,30 @@
+<h3>Dados obtidos do site IMDB.com</h3>
+<h3><a href="/ver_estatisticas">Ver estatísticas</a></h3>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Título</td>
+            <td>Diretor(es)</td>
+            <td>Ano de lançamento</td>
+            <td>Duração do Filme (min)</td>
+            <td>Gêneros</td>
+            <td>Nota no Imdb</td>
+            <td>Opções</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td> {{ item.id }} </td>
+            <td> {{ item.title }} </td>
+            <td> {{ ', '.join(item.director) }} </td>
+            <td> {{ item.year }} </td>
+            <td> {{ item.runtime }} </td>
+            <td> {{ ', '.join(item.genre) }} </td>
+            <td> {{ item.imdb_rating }} </td>
+            <td><a href="/detalhes?id={{ item.id }}">Ver detalhes</a> </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

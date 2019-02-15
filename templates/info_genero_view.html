@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <td>Gênero</td>
+            <td>Ocorrências</td>
+            <td>Probabilidade do Gênero ter avaliação maior que 8</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td> {{ item.genre }} </td>
+            <td> {{ item.occur }} </td>
+            <td> {{ item.prob_gen }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

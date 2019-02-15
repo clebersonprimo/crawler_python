@@ -1,0 +1,18 @@
+<a href="/listar_dados" type="button" class="btn-obter-dados">Voltar</a>
+
+<table>
+    <thead>
+        <tr>
+            <td>Função geradora</td>
+            <td>Descrição do erro</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for erro in erros %}
+        <tr>
+            <td> {{ erro.url }} </td>
+            <td> {{ erro.exception }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

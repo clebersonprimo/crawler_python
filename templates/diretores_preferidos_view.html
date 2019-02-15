@@ -1,0 +1,18 @@
+<a href="/listar_dados" class="btn-obter-dados">Voltar</a>
+
+<table>
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td> {{ item._id.director }} </td>
+            <td> {{ item._id.count }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

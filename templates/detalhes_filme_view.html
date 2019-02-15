@@ -1,0 +1,24 @@
+<h3>Dados obtidos do site IMDB.com</h3>
+<a href="/listar_dados">Voltar</a>
+<ul>
+    <li>Id: {{ dados.filme.id }}</li>
+    <li>Título: {{ dados.filme.title }} </li>
+    <li>Diretor( es): {{ ', '.join(dados.filme.director) }}</li>
+    <li>Ano de lançamento: {{ dados.filme.year }}</li>
+    <li>Duração do Filme: {{ dados.filme.runtime }} min</li>
+    <li>Gêneros: {{ ', '.join(dados.filme.genre) }}</li>
+    <li>Quantidade de votos: {{ dados.filme.votes }}</li>
+    <li>Arrecadação: {{ dados.filme.gain }}</li>
+    <li>Nota no Imdb: {{ dados.filme.imdb_rating }}</li>
+    <li>
+        Avaliação acima de 8 por gênero deste filme
+        {% for avaliacao in dados.estatisticas %}
+            <ul>
+                <li>Gênero:  {{ avaliacao.genre }} </li>
+                <li>Ocorrências:  {{ avaliacao.occur }} </li>
+                <li>Probabilidade:  {{ avaliacao.prob_gen }} </li>
+            </ul>
+            <br>
+        {% endfor %}
+    </li>
+</ul>
